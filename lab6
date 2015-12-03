@@ -1,0 +1,18 @@
+program lab;
+var
+sour: array[0..10] of integer;
+i,j,destInd,n: integer;
+destBuf: boolean;
+begin
+  readln(n);
+  destInd := 0;
+  for i := 1 to n do begin readln (sour[i - 1]);
+      destBuf := true;
+      for j := 2 to (sour[i - 1] - 1) do begin
+          if (sour[i - 1] mod j = 0) then
+            destBuf := false;
+        end;
+      if(destBuf = true) then destInd := destInd + 1;
+    end;
+    writeln(destInd);
+end.
